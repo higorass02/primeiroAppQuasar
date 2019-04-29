@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="BB9CED25-7006-F0A8-BAC1-67857B4DD356" name="smb_contatos" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="8A8A8A04-ECCA-0D65-82FB-5103723BA7EA" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="25ED5C91-7BE4-51A1-EDA3-0CBA9A3F393C" name="smb_endereco" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="8A8A8A04-ECCA-0D65-82FB-5103723BA7EA" propertySourceId="" propertyTargetId=""/>
+   <object objectType="FKIndexAssociation" objectID="714C1133-A548-8A4C-A66C-4127143FF885" name="tb_endereco_contato_fk" seqName="seg_0" containerID="BB9CED25-7006-F0A8-BAC1-67857B4DD356" refContainerID="25ED5C91-7BE4-51A1-EDA3-0CBA9A3F393C" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="8A8A8A04-ECCA-0D65-82FB-5103723BA7EA" propertySourceId="25ED5C91-7BE4-51A1-EDA3-0CBA9A3F393C" propertyTargetId="BB9CED25-7006-F0A8-BAC1-67857B4DD356"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

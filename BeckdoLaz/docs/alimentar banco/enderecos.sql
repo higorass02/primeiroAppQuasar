@@ -1,0 +1,1 @@
+INSERT INTO `smb_enderecos` (`id`, `telefone`, `celular`, `email`, `status`, `smb_contatos_id`) VALUES (1, '2433468773', '24999159768', 'higoraugusto120@gmail.com', '1', 1);

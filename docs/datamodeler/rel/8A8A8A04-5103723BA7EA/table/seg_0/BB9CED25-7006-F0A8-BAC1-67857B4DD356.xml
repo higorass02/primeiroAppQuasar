@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BB9CED25-7006-F0A8-BAC1-67857B4DD356" name="smb_contatos">
+<createdBy>Higor</createdBy>
+<createdTime>2019-04-28 19:02:29 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="0AA51048-1D79-2928-A8B3-83709F140D2A">
+<createdBy>Higor</createdBy>
+<createdTime>2019-04-28 19:03:09 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="nome" id="CC5D0513-4197-8DB8-9B12-C84DDADEE8AD">
+<createdBy>Higor</createdBy>
+<createdTime>2019-04-28 19:03:25 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="5B575038-EFEE-BE07-DDEA-4B3BFB0E88DA">
+<createdBy>Higor</createdBy>
+<createdTime>2019-04-28 19:29:28 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="smb_endereco_id" id="71B9A157-E9BE-C842-4331-0DC649EE322B">
+<createdBy>Higor</createdBy>
+<createdTime>2019-04-28 19:32:22 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="714C1133-A548-8A4C-A66C-4127143FF885" referredColumn="850BDC8C-E2EE-A346-18E1-2617722B7125"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6AD1C342-BEBB-6984-5BDF-11BBA17763B2" name="smb_contatos_PK">
+<createdBy>Higor</createdBy>
+<createdTime>2019-04-28 19:03:09 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0AA51048-1D79-2928-A8B3-83709F140D2A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CAF63E53-002D-3830-D977-88F3F1B37F9E" name="tb_endereco_contato_fk">
+<createdBy>Higor</createdBy>
+<createdTime>2019-04-28 19:32:22 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="71B9A157-E9BE-C842-4331-0DC649EE322B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,1 @@
+INSERT INTO `smb_contatos` (`id`, `nome`, `status`, `dt_nasc`, `cpf`) VALUES (NULL, 'Higor', '1', '1998-09-28', '173.269.247-59');

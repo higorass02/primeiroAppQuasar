@@ -5,6 +5,9 @@
         v-model="item.model"
         :label="item.label"
         :disable="item.disabled"
+        :hidden="item.hidden"
+        :required="item.required"
+        :type="item.type"
       />
     </div>
     <button @click="post"> hehe xd</button>
@@ -25,45 +28,75 @@ export default {
           model: '',
           label: 'Id',
           name: 'id',
-          disabled: true
+          disabled: true,
+          hidden: true,
+          type: 'text'
         },
         {
           model: '',
           label: 'Nome',
-          name: 'txtnome'
+          name: 'nome',
+          required: true,
+          type: 'text'
+        },
+        {
+          model: '',
+          label: 'CPF',
+          name: 'cpf',
+          required: true,
+          type: 'text'
+        },
+        {
+          model: '',
+          label: 'Data de Nascimento',
+          name: 'dtnasc',
+          type: 'date'
         },
         {
           model: '',
           label: 'Telefone',
-          name: 'tell'
+          name: 'tell',
+          type: 'text'
         },
         {
           model: '',
           label: 'Celular',
-          name: 'cell'
+          name: 'cell',
+          type: 'text'
         },
         {
           model: '',
           label: 'E-Mail',
-          name: 'email'
+          name: 'email',
+          type: 'text'
         },
         {
           model: '',
           label: 'Bairro',
-          name: 'bairro'
+          name: 'bairro',
+          type: 'text'
         }
       ]
     }
   },
   methods: {
     post () {
-      let url = 'http://localhost/dashboard/BeckdoLaz/novo.php'
+      let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/novo.php'
       let data = {}
       this.formulario.map(o => {
         data[o.name] = o.model
       })
-      console.log(data)
-      axios.post(url, data)
+      // console.log(data)
+      axios.post(url, data).then(function (response) {
+        console.log(response.data)
+        // let retorno = response.data
+        // if (retorno !== 'inserido') {
+        //   alert(retorno)
+        // }
+      })
+        .catch(function (error) {
+          console.log(error)
+        })
     },
     get () {
       let url = ''
