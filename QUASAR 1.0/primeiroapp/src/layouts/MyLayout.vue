@@ -47,6 +47,8 @@
         </q-item>
       </q-list>
     </q-drawer>
+    <q-bar dense class="bg-blue text-white">
+    </q-bar>
 
     <q-page-container>
       <router-view />

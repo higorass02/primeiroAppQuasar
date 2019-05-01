@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <q-page class="flex flex-center">
     <q-markup-table border="2px">
       <thead>
@@ -9,9 +9,9 @@
         </tr>
       </thead>
       <tbody>
-      <tr>
-        <td v-for="item in formulario" :key="item.id">
-          <label v-if="!item.hidden">{{item.value}}</label>
+      <tr v-for="item in formulario2" :key="item.id">
+        <td v-for="item2 in formulario" :key="item2.id">
+          {{item2.value}}
         </td>
       </tr>
       </tbody>
@@ -46,7 +46,7 @@ export default {
           disabled: true,
           hidden: true,
           type: 'text',
-          value: '1'
+          value: ''
         },
         {
           model: '',
@@ -54,45 +54,66 @@ export default {
           name: 'nome',
           required: true,
           type: 'text',
-          value: 'higor'
+          value: ''
         },
         {
           model: '',
           label: 'Telefone',
           name: 'tell',
           type: 'text',
-          value: '24999159768'
+          value: ''
         },
         {
           model: '',
           label: 'Celular',
           name: 'cell',
           type: 'text',
-          value: '2433468773'
+          value: ''
         },
         {
           model: '',
           label: 'E-Mail',
           name: 'email',
           type: 'text',
-          value: 'higoraugustoo120@gmail.com'
+          value: ''
         }
-      ]
+      ],
+      formulario2: []
     }
   },
   methods: {
     get () {
       let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/listar_ativos.php'
       axios.get(url)
+        // .then(response => {
+        //   var ret = {}
+        //   console.log(response.data)
+        //   response.data.map((x) => {
+        //     this.formulario.map(o => {
+        //       ret[o.value] = x[o.name]
+        //     })
+        //   })
+        //   console.log(this.formulario)
+        // })
+        // .catch(error => {
+        //   console.log(error)
+        // })
         .then(response => {
-          let ret = {}
-          console.log(response.data)
-          response.data.map(x => {
-            this.formulario.map(o => {
-              ret[o.value] = x[o.name]
+          response.data.map((o) => {
+            var ret = {}
+            this.formulario.map((e) => {
+              // console.log(e.name)
+              // console.log(o[e.name])
+              if (o[e.name] === '') {
+                e.value = 'Não Possui'
+              } else {
+                e.value = o[e.name]
+              }
+              ret[e.name] = o[e.name]
             })
+            // console.log(ret)
+            this.formulario2.push(ret)
           })
-          console.log(ret)
         })
         .catch(error => {
           console.log(error)
