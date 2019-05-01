@@ -37,18 +37,28 @@
         
         $contato = array();
 
-        //contato
-        $contato[]['ID'] = $resultado['id'];
-        $contato[]['NOME'] = $resultado['nome'];
-        $contato[]['CPF'] = $resultado['cpf'];
-        $contato[]['DT_NASC'] = $resultado['dt_nasc'];
-        $contato[]['STATUS'] = $resultado['status'];
-        //endereco
-        $contato[]['ID_ENDERECO'] = $resultado1['id'];
-        $contato[]['TELEFONE'] = $resultado1['telefone'];
-        $contato[]['CELULAR'] = $resultado1['celular'];
-        $contato[]['EMAIL'] = $resultado1['email'];
-
+        // //contato
+        // $contato[]['ID'] = $resultado['id'];
+        // $contato[]['NOME'] = $resultado['nome'];
+        // $contato[]['CPF'] = $resultado['cpf'];
+        // $contato[]['DT_NASC'] = $resultado['dt_nasc'];
+        // $contato[]['STATUS'] = $resultado['status'];
+        // //endereco
+        // $contato[]['ID_ENDERECO'] = $resultado1['id'];
+        // $contato[]['TELEFONE'] = $resultado1['telefone'];
+        // $contato[]['CELULAR'] = $resultado1['celular'];
+        // $contato[]['EMAIL'] = $resultado1['email'];
+        $contato = array(
+            'id' => $resultado['id'],
+            'nome' => $resultado['nome'],
+            'cpf' => $resultado['cpf'],
+            'dt_nasc' => $resultado['dt_nasc'],
+            'status' => $resultado['status'],
+            'id_endereco' => $resultado1['id'],
+            'telefone' => $resultado1['telefone'],
+            'celular' => $resultado1['celular'],
+            'email' => $resultado1['email']
+        );
         array_push($data, $contato) ;
     }
     echo(json_encode($data));

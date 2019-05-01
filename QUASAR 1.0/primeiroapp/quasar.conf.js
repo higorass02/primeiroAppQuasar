@@ -25,6 +25,7 @@ module.exports = function (ctx) {
 
       components: [
         'QInput',
+        'QMarkupTable',
         'QLayout',
         'QHeader',
         'QDrawer',

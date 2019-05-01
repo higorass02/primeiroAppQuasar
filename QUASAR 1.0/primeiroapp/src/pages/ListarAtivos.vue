@@ -1,19 +1,21 @@
 <template>
   <q-page class="flex flex-center">
-    <table border="2px">
-      <tr>
-        <td></td>
-        <td>Nome</td>
-        <td>Telefone</td>
-        <td>Celular</td>
-        <td>Email</td>
-      </tr>
+    <q-markup-table border="2px">
+      <thead>
+        <tr>
+          <th v-for="item in formulario" :key="item.id">
+            <label v-if="!item.hidden">{{item.label}}</label>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
       <tr>
         <td v-for="item in formulario" :key="item.id">
           <label v-if="!item.hidden">{{item.value}}</label>
         </td>
       </tr>
-    </table>
+      </tbody>
+    </q-markup-table>
     <!--<div class="row full-width flex flex-center" v-for="item in formulario" :key="item.id">-->
       <!--<q-input-->
         <!--v-model="item.model"-->
@@ -34,7 +36,6 @@
 import axios from 'axios'
 export default {
   name: 'PageIndex',
-  cabeçalho: ['Nome', 'Telefone', 'Celular', 'Email'],
   data () {
     return {
       formulario: [
@@ -80,33 +81,26 @@ export default {
     }
   },
   methods: {
-    post () {
-      let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/novo.php'
-      let data = {}
-      this.formulario.map(o => {
-        data[o.name] = o.model
-      })
-      // console.log(data)
-      axios.post(url, data).then(function (response) {
-        console.log(response.data)
-        // let retorno = response.data
-        // if (retorno !== 'inserido') {
-        //   alert(retorno)
-        // }
-      })
-        .catch(function (error) {
-          console.log(error)
-        })
-    },
     get () {
       let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/listar_ativos.php'
-      axios.post(url).then(function (response) {
-        console.log(response.data)
-      })
-        .catch(function (error) {
+      axios.get(url)
+        .then(response => {
+          let ret = {}
+          console.log(response.data)
+          response.data.map(x => {
+            this.formulario.map(o => {
+              ret[o.value] = x[o.name]
+            })
+          })
+          console.log(ret)
+        })
+        .catch(error => {
           console.log(error)
         })
     }
+  },
+  beforeMount () {
+    this.get()
   }
 }
 </script>

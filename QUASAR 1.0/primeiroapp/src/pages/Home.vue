@@ -69,12 +69,6 @@ export default {
           label: 'E-Mail',
           name: 'email',
           type: 'text'
-        },
-        {
-          model: '',
-          label: 'Bairro',
-          name: 'bairro',
-          type: 'text'
         }
       ]
     }
@@ -89,18 +83,10 @@ export default {
       // console.log(data)
       axios.post(url, data).then(function (response) {
         console.log(response.data)
-        // let retorno = response.data
-        // if (retorno !== 'inserido') {
-        //   alert(retorno)
-        // }
       })
         .catch(function (error) {
           console.log(error)
         })
-    },
-    get () {
-      let url = ''
-      axios.get(url)
     }
   }
 }
