@@ -11,7 +11,7 @@
       <tbody>
       <tr v-for="item in formulario2" :key="item.id">
         <td v-for="item2 in formulario" :key="item2.id">
-          {{item2.value}}
+          {{item[item2.position]}}
         </td>
       </tr>
       </tbody>
@@ -40,6 +40,7 @@ export default {
     return {
       formulario: [
         {
+          position: 0,
           model: '',
           label: 'Id',
           name: 'id',
@@ -49,6 +50,7 @@ export default {
           value: ''
         },
         {
+          position: 1,
           model: '',
           label: 'Nome',
           name: 'nome',
@@ -57,6 +59,7 @@ export default {
           value: ''
         },
         {
+          position: 2,
           model: '',
           label: 'Telefone',
           name: 'tell',
@@ -64,6 +67,7 @@ export default {
           value: ''
         },
         {
+          position: 3,
           model: '',
           label: 'Celular',
           name: 'cell',
@@ -71,6 +75,7 @@ export default {
           value: ''
         },
         {
+          position: 4,
           model: '',
           label: 'E-Mail',
           name: 'email',
@@ -85,39 +90,33 @@ export default {
     get () {
       let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/listar_ativos.php'
       axios.get(url)
-        // .then(response => {
-        //   var ret = {}
-        //   console.log(response.data)
-        //   response.data.map((x) => {
-        //     this.formulario.map(o => {
-        //       ret[o.value] = x[o.name]
-        //     })
-        //   })
-        //   console.log(this.formulario)
-        // })
-        // .catch(error => {
-        //   console.log(error)
-        // })
         .then(response => {
-          response.data.map((o) => {
-            var ret = {}
-            this.formulario.map((e) => {
-              // console.log(e.name)
-              // console.log(o[e.name])
-              if (o[e.name] === '') {
-                e.value = 'Não Possui'
-              } else {
-                e.value = o[e.name]
-              }
-              ret[e.name] = o[e.name]
-            })
-            // console.log(ret)
-            this.formulario2.push(ret)
+          response.data.map((x) => {
+            this.formulario2.push(
+              this.formulario.map(o => {
+                return x[o.name]
+              })
+            )
           })
         })
         .catch(error => {
           console.log(error)
         })
+        // .then(response => {
+        //   response.data.map((e) => {
+        //     this.formulario2.push(
+        //       this.formulario.map((o) => {
+        //         o.value = e[o.name]
+        //         console.log(o.value)
+        //         return o
+        //       })
+        //     )
+        //     console.log('------------')
+        //   })
+        // })
+        // .catch(error => {
+        //   console.log(error)
+        // })
     }
   },
   beforeMount () {
