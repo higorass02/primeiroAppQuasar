@@ -25,6 +25,10 @@ module.exports = function (ctx) {
 
       components: [
         'QBar',
+        'QTable',
+        'QTh',
+        'QTr',
+        'QTd',
         'QInput',
         'QMarkupTable',
         'QLayout',

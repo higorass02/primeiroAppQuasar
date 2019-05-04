@@ -1,21 +1,14 @@
 ﻿<template>
-  <q-page class="flex flex-center">
-    <q-markup-table border="2px">
-      <thead>
-        <tr>
-          <th v-for="item in formulario" :key="item.id">
-            <label v-if="!item.hidden">{{item.label}}</label>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-      <tr v-for="item in formulario2" :key="item.id">
-        <td v-for="item2 in formulario" :key="item2.id">
-          {{item[item2.position]}}
-        </td>
-      </tr>
-      </tbody>
-    </q-markup-table>
+  <q-page class="">
+    <div class="q-pa-md">
+      <q-table
+        title="Contatos"
+        dense
+        :data="formulario2"
+        :columns="formulario"
+        row-key="name"
+      />
+    </div>
     <!--<div class="row full-width flex flex-center" v-for="item in formulario" :key="item.id">-->
       <!--<q-input-->
         <!--v-model="item.model"-->
@@ -44,6 +37,7 @@ export default {
           model: '',
           label: 'Id',
           name: 'id',
+          field: 'id',
           disabled: true,
           hidden: true,
           type: 'text',
@@ -54,6 +48,7 @@ export default {
           model: '',
           label: 'Nome',
           name: 'nome',
+          field: 'nome',
           required: true,
           type: 'text',
           value: ''
@@ -63,6 +58,7 @@ export default {
           model: '',
           label: 'Telefone',
           name: 'tell',
+          field: 'tell',
           type: 'text',
           value: ''
         },
@@ -71,6 +67,7 @@ export default {
           model: '',
           label: 'Celular',
           name: 'cell',
+          field: 'cell',
           type: 'text',
           value: ''
         },
@@ -79,6 +76,7 @@ export default {
           model: '',
           label: 'E-Mail',
           name: 'email',
+          field: 'email',
           type: 'text',
           value: ''
         }
@@ -92,11 +90,11 @@ export default {
       axios.get(url)
         .then(response => {
           response.data.map((x) => {
-            this.formulario2.push(
-              this.formulario.map(o => {
-                return x[o.name]
-              })
-            )
+            let ret = {}
+            this.formulario.map(o => {
+              ret[o.name] = x[o.name]
+            })
+            this.formulario2.push(ret)
           })
         })
         .catch(error => {
