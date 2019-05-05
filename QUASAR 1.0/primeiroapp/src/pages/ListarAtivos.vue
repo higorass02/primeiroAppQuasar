@@ -1,6 +1,6 @@
 ﻿<template>
-  <q-page class="">
-    <div class="q-pa-md">
+  <q-page class="full-height">
+    <div class="q-pa-md ">
       <q-table
         title="Contatos"
         dense
