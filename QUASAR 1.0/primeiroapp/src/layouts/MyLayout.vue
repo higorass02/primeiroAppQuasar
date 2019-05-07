@@ -38,9 +38,16 @@
               <q-icon name="menu" />
             </q-btn>
           </q-item-label>
-          <q-item clickable tag="a" href="/#/">
+          <q-item
+            clickable
+            tag="a"
+            href="/#/"
+          >
+            <q-item-section avatar>
+              <q-icon name="home" />
+            </q-item-section>
             <q-item-section>
-              <q-item-label>Home</q-item-label>
+              <q-item-label >Home</q-item-label>
             </q-item-section>
           </q-item>
           <q-expansion-item
@@ -49,20 +56,23 @@
             label="Contatos"
             caption="Controle de Contatos"
           >
-            <q-item clickable tag="a" href="/#/">
+            <q-item clickable tag="a" href="/#/cadastroContatos">
               <q-item-section>
-                <q-item-label>Home</q-item-label>
+                <q-item-label>Cadastrar Contato</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item clickable tag="a" href="/#/">
+            <q-item clickable tag="a" href="/#/listarAtivosContatos">
               <q-item-section>
-                <q-item-label>Home</q-item-label>
+                <q-item-label>Listar Contatos</q-item-label>
               </q-item-section>
             </q-item>
           </q-expansion-item>
-          <q-item clickable tag="a" href="/#/listarAtivos">
+          <q-item clickable tag="a" href="/#/calendario">
+            <q-item-section avatar>
+              <q-icon name="calendar_today" />
+            </q-item-section>
             <q-item-section>
-              <q-item-label >Agenda</q-item-label>
+              <q-item-label>Agenda</q-item-label>
             </q-item-section>
           </q-item>
         </q-list>
