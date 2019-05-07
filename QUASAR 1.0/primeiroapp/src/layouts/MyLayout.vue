@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="glossy bg-brown-8">
+    <q-header elevated class="glossy bg-blue-grey-7">
       <q-toolbar>
         <q-btn
           flat
@@ -28,17 +28,41 @@
       <div>
         <q-list>
           <q-item-label header>
-            <i class="fas fa-bars"></i> Menu
+            <q-btn
+              flat
+              dense
+              round
+              @click="leftDrawerOpen = !leftDrawerOpen"
+              aria-label="Menu"
+            >
+              <q-icon name="menu" />
+            </q-btn>
           </q-item-label>
           <q-item clickable tag="a" href="/#/">
             <q-item-section>
               <q-item-label>Home</q-item-label>
             </q-item-section>
           </q-item>
-          <q-select class="q-mx-md" borderless v-model="model" :options="optionsContatos" label="Contatos" />
+          <q-expansion-item
+            expand-separator
+            icon="perm_contact_calendar"
+            label="Contatos"
+            caption="Controle de Contatos"
+          >
+            <q-item clickable tag="a" href="/#/">
+              <q-item-section>
+                <q-item-label>Home</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item clickable tag="a" href="/#/">
+              <q-item-section>
+                <q-item-label>Home</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-expansion-item>
           <q-item clickable tag="a" href="/#/listarAtivos">
             <q-item-section>
-              <q-item-label>Agenda</q-item-label>
+              <q-item-label >Agenda</q-item-label>
             </q-item-section>
           </q-item>
         </q-list>
@@ -47,7 +71,7 @@
     <q-bar dense class="bg-blue text-white">
     </q-bar>
 
-    <q-page-container>
+    <q-page-container class="bg-grey-3">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -72,7 +96,10 @@ export default {
     }
   },
   methods: {
-    openURL
+    openURL,
+    contatosclick () {
+      console.log('asd')
+    }
   }
 }
 </script>

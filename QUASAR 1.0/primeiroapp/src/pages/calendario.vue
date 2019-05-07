@@ -1,6 +1,22 @@
 ﻿<template>
   <q-page class="full-height">
     <div class="q-pa-md ">
+      <div class="q-gutter-md row items-start">
+        <q-date
+          v-model="date"
+          minimal
+        />
+      </div>
+    </div>
+    <modal-agendar/>
+    <div class="q-pa-md ">
+      <q-btn
+        style="margin-right: 10px;"
+        class="float-right"
+        icon="add"
+        round
+        color="primary"
+      />
       <q-table
         title="Contatos"
         dense
@@ -15,7 +31,7 @@
             class="q-pa-xs col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-style-transition"
             :style="props.selected ? 'transform: scale(0.95);' : ''"
           >
-            <q-card :class="props.selected ? 'bg-grey-2' : ''">
+            <q-card>
               <q-list dense>
                 <q-item v-for="col in props.cols.filter(col => col.name !== 'desc')" :key="col.name">
                   <q-item-section>
@@ -48,14 +64,18 @@
 </style>
 
 <script>
+import modalAgendar from 'src/pages/modalAgendar'
 import axios from 'axios'
 export default {
   name: 'PageIndex',
+  components: {
+    modalAgendar
+  },
   data () {
     return {
+      date: '2019/05/06',
       formulario: [
         {
-          position: 0,
           model: '',
           label: 'Id',
           name: 'id',
@@ -66,39 +86,44 @@ export default {
           value: ''
         },
         {
-          position: 1,
           model: '',
-          label: 'Nome',
-          name: 'nome',
-          field: 'nome',
-          required: true,
+          label: 'Data Agenda',
+          name: 'data_agenda',
+          field: 'data_agenda',
+          disabled: true,
+          hidden: true,
           type: 'text',
           value: ''
         },
         {
-          position: 2,
           model: '',
-          label: 'Telefone',
-          name: 'tell',
-          field: 'tell',
+          label: 'Hora',
+          name: 'hora',
+          field: 'hora',
           type: 'text',
           value: ''
         },
         {
-          position: 3,
           model: '',
-          label: 'Celular',
-          name: 'cell',
-          field: 'cell',
+          label: 'Id Contato',
+          name: 'id_contato',
+          field: 'id_contato',
           type: 'text',
           value: ''
         },
         {
-          position: 4,
           model: '',
-          label: 'E-Mail',
-          name: 'email',
-          field: 'email',
+          label: 'Id Servico',
+          name: 'id_servico',
+          field: 'id_servico',
+          type: 'text',
+          value: ''
+        },
+        {
+          model: '',
+          label: 'Status',
+          name: 'status',
+          field: 'status',
           type: 'text',
           value: ''
         }
@@ -108,7 +133,8 @@ export default {
   },
   methods: {
     get () {
-      let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/listar_ativos.php'
+      this.formulario2 = []
+      let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/listarCalendario.php?data=' + this.date
       axios.get(url)
         .then(response => {
           response.data.map((x) => {
@@ -137,6 +163,11 @@ export default {
         // .catch(error => {
         //   console.log(error)
         // })
+    }
+  },
+  watch: {
+    'date' () {
+      this.get()
     }
   },
   beforeMount () {
