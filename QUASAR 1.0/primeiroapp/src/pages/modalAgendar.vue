@@ -1,5 +1,6 @@
 <template>
-  <q-card class="absolute-center relative-position z-top bg-white" width="300px" heigth="300px" ref="modalAgendar">
+  <q-dialog v-model="showModal">
+    <q-layout view="Lhh lpR fff" container class="bg-white">
     <div class="row full-width flex flex-center" v-for="item in formulario" :key="item.id">
       <q-input
         v-model="item.model"
@@ -11,7 +12,8 @@
       />
     </div>
     <button @click="post"> hehe xd</button>
-  </q-card>
+    </q-layout>
+  </q-dialog>
 </template>
 
 <style>
@@ -21,6 +23,12 @@
 import axios from 'axios'
 export default {
   name: 'PageIndex',
+  props: {
+    showModal: {
+      type: Boolean,
+      default: false
+    }
+  },
   data () {
     return {
       formulario: [

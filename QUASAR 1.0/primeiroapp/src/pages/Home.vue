@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     post () {
-      let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/novo.php'
+      let url = 'https://vemprofutes.000webhostapp.com/BeckdoLaz/novo.php'
       let data = {}
       this.formulario.map(o => {
         data[o.name] = o.model

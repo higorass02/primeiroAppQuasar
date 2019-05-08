@@ -78,9 +78,6 @@
         </q-list>
       </div>
     </q-drawer>
-    <q-bar dense class="bg-blue text-white">
-    </q-bar>
-
     <q-page-container class="bg-grey-3">
       <router-view />
     </q-page-container>

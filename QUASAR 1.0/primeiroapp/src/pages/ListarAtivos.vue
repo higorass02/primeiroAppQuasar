@@ -108,7 +108,7 @@ export default {
   },
   methods: {
     get () {
-      let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/listar_ativos.php'
+      let url = 'https://vemprofutes.000webhostapp.com/BeckdoLaz/listar_ativos.php'
       axios.get(url)
         .then(response => {
           response.data.map((x) => {

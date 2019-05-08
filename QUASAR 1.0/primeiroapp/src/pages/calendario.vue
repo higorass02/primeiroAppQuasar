@@ -8,15 +8,19 @@
         />
       </div>
     </div>
-    <modal-agendar/>
-    <div class="q-pa-md ">
-      <q-btn
+    {{showModal}}
+    <modal-agendar :showModal="showModal"/>
+    <div class="q-pa-md">
+      <button
         style="margin-right: 10px;"
-        class="float-right"
-        icon="add"
-        round
-        color="primary"
-      />
+        class="bg-primary"
+        @click="controleModal"
+      >
+        <q-icon
+          class="text-white"
+          name="add"
+        />
+      </button>
       <q-table
         title="Contatos"
         dense
@@ -128,10 +132,15 @@ export default {
           value: ''
         }
       ],
-      formulario2: []
+      formulario2: [],
+      showModal: false
     }
   },
   methods: {
+    controleModal () {
+      this.showModal = false
+      this.showModal = true
+    },
     get () {
       this.formulario2 = []
       let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/listarCalendario.php?data=' + this.date
