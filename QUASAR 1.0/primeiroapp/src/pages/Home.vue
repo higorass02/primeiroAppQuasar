@@ -1,16 +1,26 @@
 <template>
   <q-page class="flex flex-center">
-    <div class="row full-width flex flex-center" v-for="item in formulario" :key="item.id">
+    <div class="row full-width flex flex-center" style="margin-top: -40%" >
       <q-input
+        style="width: 80%;"
+        v-for="item in formulario" :key="item.id"
+        color="white"
+        dark
         v-model="item.model"
         :label="item.label"
         :disable="item.disabled"
         :hidden="item.hidden"
         :required="item.required"
-        :type="item.type"
+        :mask="item.mask"
       />
     </div>
-    <button @click="post"> hehe xd</button>
+    <div class="row full-width absolute-bottom" style="margin-bottom: 10%">
+      <div class="row col-12">
+        <div class="col-2"></div>
+        <q-btn class="col shadow bg-white" rounded label="Cadastrar" @click="post"/>
+        <div class="col-2"></div>
+      </div>
+    </div>
   </q-page>
 </template>
 
@@ -30,52 +40,52 @@ export default {
           name: 'id',
           disabled: true,
           hidden: true,
-          type: 'text'
+          mask: ''
         },
         {
           model: '',
           label: 'Nome',
           name: 'nome',
           required: true,
-          type: 'text'
+          mask: ''
         },
         {
           model: '',
           label: 'CPF',
           name: 'cpf',
           required: true,
-          type: 'text'
+          mask: '###.###.###-##'
         },
         {
           model: '',
           label: 'Data de Nascimento',
           name: 'dtnasc',
-          type: 'date'
+          mask: '##/##/####'
         },
         {
           model: '',
           label: 'Telefone',
           name: 'tell',
-          type: 'text'
+          mask: '(##) ####-####'
         },
         {
           model: '',
           label: 'Celular',
           name: 'cell',
-          type: 'text'
+          mask: '(##) #####-####'
         },
         {
           model: '',
           label: 'E-Mail',
           name: 'email',
-          type: 'text'
+          mask: ''
         }
       ]
     }
   },
   methods: {
     post () {
-      let url = 'https://vemprofutes.000webhostapp.com/BeckdoLaz/novo.php'
+      let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/novo.php'
       let data = {}
       this.formulario.map(o => {
         data[o.name] = o.model

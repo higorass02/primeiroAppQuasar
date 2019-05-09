@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="glossy bg-blue-grey-7">
+    <q-header elevated class="transparent shadow" >
       <q-toolbar>
         <q-btn
           flat
@@ -78,7 +78,7 @@
         </q-list>
       </div>
     </q-drawer>
-    <q-page-container class="bg-grey-3">
+    <q-page-container class="fundo" >
       <router-view />
     </q-page-container>
   </q-layout>
@@ -112,4 +112,7 @@ export default {
 </script>
 
 <style>
+  .fundo{
+    background-image: linear-gradient(to top, #136576, #006391, #135aa5, #6846a4, #a10f87);
+  }
 </style>

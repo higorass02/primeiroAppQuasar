@@ -1,6 +1,9 @@
 ﻿<template>
   <q-page class="full-height">
     <div class="q-pa-md ">
+      <input v-model="pesquisa" @input="tentando()"/>
+    </div>
+    <div class="q-pa-md ">
       <q-table
         title="Contatos"
         dense
@@ -15,7 +18,7 @@
             class="q-pa-xs col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-style-transition"
             :style="props.selected ? 'transform: scale(0.95);' : ''"
           >
-            <q-card :class="props.selected ? 'bg-grey-2' : ''">
+            <q-card>
               <q-list dense>
                 <q-item v-for="col in props.cols.filter(col => col.name !== 'desc')" :key="col.name">
                   <q-item-section>
@@ -103,12 +106,22 @@ export default {
           value: ''
         }
       ],
-      formulario2: []
+      formulario2: [],
+      pesquisa: '',
+      typingTimer: ''
     }
   },
   methods: {
+    tentando () {
+      clearTimeout(this.typingTimer)
+      this.typingTimer = setTimeout(this.get, 1500)
+    },
     get () {
-      let url = 'https://vemprofutes.000webhostapp.com/BeckdoLaz/listar_ativos.php'
+      let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/listar_ativos.php?termo='
+      if (this.pesquisa) {
+        url += this.pesquisa
+      }
+      this.formulario2 = []
       axios.get(url)
         .then(response => {
           response.data.map((x) => {
