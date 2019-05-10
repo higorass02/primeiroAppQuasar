@@ -5,9 +5,9 @@ const routes = [
     component: () => import('layouts/MyLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-      { path: '/cadastroContatos', component: () => import('pages/Home.vue') },
+      { path: '/cadastroContatos', component: () => import('pages/Cadastro.vue') },
       { path: '/listarAtivosContatos', component: () => import('pages/ListarAtivos.vue') },
-      { path: '/calendario', component: () => import('pages/calendario.vue') }
+      { path: '/calendario', component: () => import('pages/Calendario.vue') }
     ]
   }
 ]

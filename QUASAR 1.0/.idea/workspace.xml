@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a9188ae-a481-415f-9f0b-3b3562e783df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../BeckdoLaz/listar_ativos.php" beforeDir="false" afterPath="$PROJECT_DIR$/../BeckdoLaz/listar_ativos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/QUASAR 1.0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/QUASAR 1.0.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/primeiroapp/src/layouts/MyLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/primeiroapp/src/layouts/MyLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/primeiroapp/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/primeiroapp/src/pages/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/primeiroapp/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/primeiroapp/src/pages/Cadastro.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/primeiroapp/src/pages/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/primeiroapp/src/pages/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/primeiroapp/src/pages/ListarAtivos.vue" beforeDir="false" afterPath="$PROJECT_DIR$/primeiroapp/src/pages/ListarAtivos.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/primeiroapp/src/pages/calendario.vue" beforeDir="false" afterPath="$PROJECT_DIR$/primeiroapp/src/pages/Calendario.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/primeiroapp/src/pages/modalAgendar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/primeiroapp/src/pages/modalAgendar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/primeiroapp/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/primeiroapp/src/router/routes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,7 +31,7 @@
     <session id="-191489097">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.156" value="1" />
@@ -41,12 +40,13 @@
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.57" value="1" />
           <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.72" value="1" />
           <entry key="project.open.time.74" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -55,7 +55,7 @@
           <entry key="rnc" value="1" />
           <entry key="styl" value="2" />
           <entry key="svg" value="2" />
-          <entry key="vue" value="30" />
+          <entry key="vue" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -64,21 +64,21 @@
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="2" />
           <entry key="Stylus" value="2" />
-          <entry key="Vue.js" value="30" />
+          <entry key="Vue.js" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="84" />
           <entry key="styl" value="61" />
-          <entry key="vue" value="8202" />
+          <entry key="vue" value="8515" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="84" />
           <entry key="Stylus" value="61" />
-          <entry key="Vue.js" value="8202" />
+          <entry key="Vue.js" value="8515" />
         </counts>
       </usages-collector>
     </session>
@@ -88,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/primeiroapp/src/layouts/MyLayout.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="18" column="35" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="177">
+              <caret line="80" column="34" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#q-btn#0;n#div#0;n#q-toolbar#0;n#q-header#0;n#q-layout#0;n#template#0;n#!!top" expanded="true" />
               </folding>
@@ -98,25 +98,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/Index.vue">
+        <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/modalAgendar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="6" />
+            <state relative-caret-position="68">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="30" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#q-page#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#q-page#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#q-layout#0;n#q-dialog#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#q-input#0;n#div#0;n#q-layout#0;n#q-dialog#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#q-layout#0;n#q-dialog#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#q-layout#0;n#q-dialog#0;n#template#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/Home.vue">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/Index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="442">
+              <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="29" selection-end-column="3" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#q-page#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/Cadastro.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="63" column="10" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="63" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#q-page#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#q-input#0;n#div#0;n#q-page#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#q-page#0;n#template#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -124,37 +139,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/modalAgendar.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1207">
-              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/ListarAtivos.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" selection-start-column="10" selection-end-column="10" />
+            <state relative-caret-position="85">
+              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/calendario.vue">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/Calendario.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/primeiroapp/quasar.conf.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="48" column="14" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="14" />
+            <state relative-caret-position="391">
+              <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#1;n#q-page#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -163,9 +163,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>QMarkupTable</find>
-      <find>cabecalho</find>
-      <find>reet</find>
       <find>cosole</find>
       <find>formulario</find>
       <find>formulario2</find>
@@ -193,6 +190,9 @@
       <find>bg</find>
       <find>q-icon</find>
       <find>type</find>
+      <find>controleModal</find>
+      <find>fundo</find>
+      <find>contatos</find>
     </findStrings>
     <replaceStrings>
       <replace>mask</replace>
@@ -211,12 +211,13 @@
         <option value="$PROJECT_DIR$/primeiroapp/src/router/routes.js" />
         <option value="$PROJECT_DIR$/primeiroapp/src/css/quasar.variables.styl" />
         <option value="$PROJECT_DIR$/primeiroapp/quasar.conf.js" />
-        <option value="$PROJECT_DIR$/primeiroapp/src/pages/modalAgendar.vue" />
         <option value="$PROJECT_DIR$/primeiroapp/src/pages/calendario.vue" />
         <option value="$PROJECT_DIR$/primeiroapp/src/pages/ListarAtivos.vue" />
         <option value="$PROJECT_DIR$/primeiroapp/src/layouts/MyLayout.vue" />
-        <option value="$PROJECT_DIR$/primeiroapp/src/pages/Index.vue" />
         <option value="$PROJECT_DIR$/primeiroapp/src/pages/Home.vue" />
+        <option value="$PROJECT_DIR$/primeiroapp/src/pages/Index.vue" />
+        <option value="$PROJECT_DIR$/primeiroapp/src/pages/modalAgendar.vue" />
+        <option value="$PROJECT_DIR$/primeiroapp/src/pages/Calendario.vue" />
       </list>
     </option>
   </component>
@@ -234,36 +235,6 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/primeiroapp/package.json" />
       <path value="$PROJECT_DIR$/primeiroapp/src-cordova/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/abbrev/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/android-versions/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/ansi/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/balanced-match/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/base64-js/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/big-integer/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/bplist-parser/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/brace-expansion/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/concat-map/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/cordova-common/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/cordova-registry-mapper/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/elementtree/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/glob/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/inflight/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/minimatch/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/nopt/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/once/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/path-is-absolute/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/plist/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/properties-parser/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/q/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/sax/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/semver/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/shelljs/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/underscore/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/unorm/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/wrappy/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/xmlbuilder/package.json" />
-      <path value="$PROJECT_DIR$/primeiroapp/src-cordova/platforms/android/cordova/node_modules/xmldom/package.json" />
       <path value="$PROJECT_DIR$/primeiroapp/src-cordova/plugins/cordova-plugin-whitelist/package.json" />
     </packageJsonPaths>
   </component>
@@ -303,13 +274,6 @@
               <item name="QUASAR 1.0" type="462c0819:PsiDirectoryNode" />
               <item name="primeiroapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QUASAR 1.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QUASAR 1.0" type="462c0819:PsiDirectoryNode" />
-              <item name="primeiroapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -318,13 +282,6 @@
               <item name="primeiroapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QUASAR 1.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QUASAR 1.0" type="462c0819:PsiDirectoryNode" />
-              <item name="primeiroapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -379,11 +336,12 @@
       <workItem from="1557267552502" duration="2503000" />
       <workItem from="1557273921325" duration="2350000" />
       <workItem from="1557354324374" duration="8212000" />
+      <workItem from="1557519909964" duration="3240000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61710000" />
+    <option name="totallyTimeSpent" value="64950000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -392,7 +350,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -444,13 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/calendario.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/primeiroapp/quasar.conf.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
@@ -460,46 +411,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/primeiroapp/src/layouts/MyLayout.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="177">
+          <caret line="80" column="34" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="34" />
           <folding>
             <element signature="n#style#0;n#i#0;n#q-btn#0;n#div#0;n#q-toolbar#0;n#q-header#0;n#q-layout#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/modalAgendar.vue">
+    <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/Cadastro.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1207">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/ListarAtivos.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        <state relative-caret-position="255">
+          <caret line="63" column="10" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="63" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#q-page#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#q-input#0;n#div#0;n#q-page#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#q-page#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="6" />
+        <state relative-caret-position="442">
+          <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="29" selection-end-column="3" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#0;n#q-page#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#q-page#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/Home.vue">
+    <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/modalAgendar.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="30" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#q-page#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#q-page#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#q-layout#0;n#q-dialog#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#q-input#0;n#div#0;n#q-layout#0;n#q-dialog#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#q-layout#0;n#q-dialog#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#q-layout#0;n#q-dialog#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/ListarAtivos.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/primeiroapp/src/pages/Calendario.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#1;n#q-page#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

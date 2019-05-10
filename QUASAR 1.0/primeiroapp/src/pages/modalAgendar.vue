@@ -1,8 +1,13 @@
 <template>
   <q-dialog v-model="showModal">
-    <q-layout view="Lhh lpR fff" container class="bg-white">
-    <div class="row full-width flex flex-center" v-for="item in formulario" :key="item.id">
+    <q-layout view="Lhh lpR fff" container class="row fundo">
+      <div class="row full-width flex flex-center" style="margin-top: 30%" >
+        <h4 class="text-white">Agendar Serviço</h4>
       <q-input
+        v-for="item in formulario" :key="item.id"
+        style="width: 80%;"
+        color="white"
+        dark
         v-model="item.model"
         :label="item.label"
         :disable="item.disabled"
@@ -11,12 +16,24 @@
         :type="item.type"
       />
     </div>
-    <button @click="post"> hehe xd</button>
+      <div class="row col-12" style="margin-top: 20px">
+        <div class="col-2"></div>
+        <q-btn class="col shadow bg-white" rounded label="Agendar" @click="post"/>
+        <div class="col-2"></div>
+      </div>
+      <div class="row col-12" style="margin-top: 20px">
+        <div class="col-2"></div>
+        <q-btn class="col shadow bg-white" rounded label="Cancelar" />
+        <div class="col-2"></div>
+      </div>
     </q-layout>
   </q-dialog>
 </template>
 
 <style>
+  .fundo{
+    background-image: linear-gradient(to top, #136576, #006391, #135aa5, #6846a4, #a10f87);
+  }
 </style>
 
 <script>
@@ -34,49 +51,27 @@ export default {
       formulario: [
         {
           model: '',
-          label: 'Id',
-          name: 'id',
-          disabled: true,
-          hidden: true,
-          type: 'text'
+          label: 'Data Agendamento',
+          name: 'data',
+          mask: '##/##/####'
         },
         {
           model: '',
-          label: 'Nome',
-          name: 'nome',
-          required: true,
-          type: 'text'
+          label: 'Hora',
+          name: 'hora',
+          mask: '##:##'
         },
         {
           model: '',
-          label: 'CPF',
-          name: 'cpf',
-          required: true,
-          type: 'text'
+          label: 'Contato',
+          name: 'contato',
+          mask: ''
         },
         {
           model: '',
-          label: 'Data de Nascimento',
-          name: 'dtnasc',
-          type: 'date'
-        },
-        {
-          model: '',
-          label: 'Telefone',
-          name: 'tell',
-          type: 'text'
-        },
-        {
-          model: '',
-          label: 'Celular',
-          name: 'cell',
-          type: 'text'
-        },
-        {
-          model: '',
-          label: 'E-Mail',
-          name: 'email',
-          type: 'text'
+          label: 'Serviço',
+          name: 'servico',
+          mask: ''
         }
       ]
     }

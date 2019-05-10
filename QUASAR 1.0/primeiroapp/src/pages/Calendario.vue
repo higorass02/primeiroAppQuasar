@@ -8,7 +8,6 @@
         />
       </div>
     </div>
-    {{showModal}}
     <modal-agendar :showModal="showModal"/>
     <div class="q-pa-md">
       <button
@@ -21,8 +20,8 @@
           name="add"
         />
       </button>
+      <p style="color: #FFF;font-size: 20px;text-align: center;">Agendados</p>
       <q-table
-        title="Contatos"
         dense
         :data="formulario2"
         :columns="formulario"
