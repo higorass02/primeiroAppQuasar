@@ -1,0 +1,1 @@
+INSERT INTO `smb_agenda` (`id`, `data_agenda`, `data_criacao`, `hora`, `status`, `id_contato`, `id_servico`) VALUES (NULL, '2019-05-14', '2019-05-15', '10:00', '1', '1', '1');

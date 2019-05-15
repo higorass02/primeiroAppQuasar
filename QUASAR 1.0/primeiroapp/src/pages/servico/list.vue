@@ -1,50 +1,7 @@
 ﻿<template>
-  <q-page class="full-height">
-    <div class="q-pa-md ">
-      <input v-model="pesquisa" @input="tentando()"/>
-    </div>
-    <div class="q-pa-md ">
-      <q-table
-        title="Contatos"
-        dense
-        :data="formulario2"
-        :columns="formulario"
-        row-key="name"
-        grid
-        hide-header
-      >
-        <template v-slot:item="props">
-          <div
-            class="q-pa-xs col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-style-transition"
-            :style="props.selected ? 'transform: scale(0.95);' : ''"
-          >
-            <q-card>
-              <q-list dense>
-                <q-item v-for="col in props.cols.filter(col => col.name !== 'desc')" :key="col.name">
-                  <q-item-section>
-                    <q-item-label>{{ col.label }}</q-item-label>
-                  </q-item-section>
-                  <q-item-section side>
-                    <q-item-label caption>{{ col.value }}</q-item-label>
-                  </q-item-section>
-                </q-item>
-              </q-list>
-            </q-card>
-          </div>
-        </template>
-      </q-table>
-    </div>
-    <!--<div class="row full-width flex flex-center" v-for="item in formulario" :key="item.id">-->
-      <!--<q-input-->
-        <!--v-model="item.model"-->
-        <!--:label="item.label"-->
-        <!--:disable="item.disabled"-->
-        <!--:hidden="item.hidden"-->
-        <!--:required="item.required"-->
-        <!--:type="item.type"-->
-      <!--/>-->
-    <!--</div>-->
-  </q-page>
+  <div>
+    <listar-form :formulario="formulario" :url="url"/>
+  </div>
 </template>
 
 <style>
@@ -52,13 +9,16 @@
 
 <script>
 import axios from 'axios'
+import listarForm from 'src/components/Listar.vue'
 export default {
+  components: {
+    listarForm
+  },
   name: 'PageIndex',
   data () {
     return {
       formulario: [
         {
-          position: 0,
           model: '',
           label: 'Id',
           name: 'id',
@@ -69,7 +29,6 @@ export default {
           value: ''
         },
         {
-          position: 1,
           model: '',
           label: 'Nome',
           name: 'nome',
@@ -79,7 +38,6 @@ export default {
           value: ''
         },
         {
-          position: 2,
           model: '',
           label: 'Telefone',
           name: 'tell',
@@ -88,7 +46,6 @@ export default {
           value: ''
         },
         {
-          position: 3,
           model: '',
           label: 'Celular',
           name: 'cell',
@@ -97,7 +54,6 @@ export default {
           value: ''
         },
         {
-          position: 4,
           model: '',
           label: 'E-Mail',
           name: 'email',
@@ -106,6 +62,7 @@ export default {
           value: ''
         }
       ],
+      url: 'http://localhost/dashboard/1quasar/BeckdoLaz/listar_ativos.php?termo=',
       formulario2: [],
       pesquisa: '',
       typingTimer: ''
@@ -117,12 +74,11 @@ export default {
       this.typingTimer = setTimeout(this.get, 1500)
     },
     get () {
-      let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/listar_ativos.php?termo='
       if (this.pesquisa) {
-        url += this.pesquisa
+        this.url += this.pesquisa
       }
       this.formulario2 = []
-      axios.get(url)
+      axios.get(this.url)
         .then(response => {
           response.data.map((x) => {
             let ret = {}

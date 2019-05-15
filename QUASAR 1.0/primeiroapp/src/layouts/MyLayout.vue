@@ -28,28 +28,14 @@
       <div>
         <q-list>
           <q-item-label header>
-            <q-btn
-              flat
-              dense
-              round
-              @click="leftDrawerOpen = !leftDrawerOpen"
-              aria-label="Menu"
+            <q-item
+              clickable
+              tag="a"
+              href="/#/"
             >
-              <q-icon name="menu" />
-            </q-btn>
+              <img src="assets/logoSalao.png" style="width: 80%; height: 80%"/>
+            </q-item>
           </q-item-label>
-          <q-item
-            clickable
-            tag="a"
-            href="/#/"
-          >
-            <q-item-section avatar>
-              <q-icon name="home" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label >Home</q-item-label>
-            </q-item-section>
-          </q-item>
           <q-expansion-item
             expand-separator
             icon="perm_contact_calendar"
@@ -61,13 +47,13 @@
                 <q-item-label>Cadastrar Contato</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item clickable tag="a" href="/#/listarAtivosContatos">
+            <q-item clickable tag="a" href="/#/listarContatos">
               <q-item-section>
                 <q-item-label>Listar Contatos</q-item-label>
               </q-item-section>
             </q-item>
           </q-expansion-item>
-          <q-item clickable tag="a" href="/#/calendario">
+          <q-item clickable tag="a" href="/#/listarAgendamento">
             <q-item-section avatar>
               <q-icon name="calendar_today" />
             </q-item-section>

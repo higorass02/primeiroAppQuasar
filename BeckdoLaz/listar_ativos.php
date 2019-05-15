@@ -18,7 +18,11 @@
             header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
         exit(0);
     }
-    if($_GET['termo']){
+    $termo = "";
+    if($_GET){
+        $termo = $_GET['termo'];
+    }
+    if($termo){
 
         include('conection.php');
 

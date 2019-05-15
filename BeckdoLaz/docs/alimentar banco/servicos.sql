@@ -1,0 +1,1 @@
+INSERT INTO `smb_servicos` (`id`, `nome`, `valor`, `tp_servico`, `status`) VALUES (NULL, 'Corte Simples', '10.00', '1', '1');

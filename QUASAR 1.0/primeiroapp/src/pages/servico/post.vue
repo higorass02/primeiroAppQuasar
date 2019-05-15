@@ -1,27 +1,7 @@
 <template>
-  <q-page class="flex flex-center">
-    <div class="row full-width flex flex-center" style="margin-top: -40%" >
-      <q-input
-        style="width: 80%;"
-        v-for="item in formulario" :key="item.id"
-        color="white"
-        dark
-        v-model="item.model"
-        :label="item.label"
-        :disable="item.disabled"
-        :hidden="item.hidden"
-        :required="item.required"
-        :mask="item.mask"
-      />
-    </div>
-    <div class="row full-width absolute-bottom" style="margin-bottom: 10%">
-      <div class="row col-12">
-        <div class="col-2"></div>
-        <q-btn class="col shadow bg-white" rounded label="Cadastrar" @click="post"/>
-        <div class="col-2"></div>
-      </div>
-    </div>
-  </q-page>
+  <div>
+    <cadastro-form :formulario="formulario" :url="url" :voltar="voltar"/>
+  </div>
 </template>
 
 <style>
@@ -29,10 +9,16 @@
 
 <script>
 import axios from 'axios'
+import cadastroForm from 'src/components/Cadastro.vue'
 export default {
   name: 'PageIndex',
+  components: {
+    cadastroForm
+  },
   data () {
     return {
+      url: 'http://localhost/dashboard/1quasar/BeckdoLaz/novo.php',
+      voltar: '/listarContatos',
       formulario: [
         {
           model: '',

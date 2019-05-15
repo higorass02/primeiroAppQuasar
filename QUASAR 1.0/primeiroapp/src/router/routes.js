@@ -5,9 +5,11 @@ const routes = [
     component: () => import('layouts/MyLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-      { path: '/cadastroContatos', component: () => import('pages/Cadastro.vue') },
-      { path: '/listarAtivosContatos', component: () => import('pages/ListarAtivos.vue') },
-      { path: '/calendario', component: () => import('pages/Calendario.vue') }
+      { name: 'cadastrar-contato', path: '/cadastroContatos', component: () => import('pages/contato/post.vue') },
+      { name: 'listar-contato', path: '/listarContatos', component: () => import('pages/contato/list.vue') },
+      { name: 'cadastrar-servico', path: '/cadastroServicos', component: () => import('pages/servico/post.vue') },
+      { name: 'listar-servico', path: '/listarServicos', component: () => import('pages/servico/list.vue') },
+      { name: 'listar-agendamento', path: '/listarAgendamento', component: () => import('pages/agendamento/list.vue') }
     ]
   }
 ]

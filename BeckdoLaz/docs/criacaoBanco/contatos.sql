@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `mydb`.`smb_contatos` (
+CREATE TABLE IF NOT EXISTS `smb_contatos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `status` CHAR(1) NOT NULL DEFAULT '1',

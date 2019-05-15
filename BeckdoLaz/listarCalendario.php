@@ -18,12 +18,16 @@
             header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
         exit(0);
     }
-    $data = $_GET['data'];
+    $data = "";
+
+    if($_GET){
+        $data = $_GET['data'];
+    }
 
     include('conection.php');
 
-    $sql = 'SELECT * FROM `smb_agenda` WHERE DATE_FORMAT(data_agendado, "%Y/%m/%d") = "'.$data.'"';
-
+    $sql = "SELECT * FROM `smb_agenda` WHERE DATE_FORMAT(data_agenda, '%Y-%m-%d') = '".$data."'";
+    
     $result = $conn->query($sql);
     
     $data = array();
@@ -36,13 +40,14 @@
 
     $contato = array(
         'id' => $resultado['id'],
-        'data_agenda' => $resultado['data_agendado'],
+        'data_agenda' => $resultado['data_agenda'],
         'data_criacao' => $resultado['data_criacao'],
         'hora' => $resultado['hora'],
         'status' => $resultado['status'],
-        'id_contato' => $resultado['id_contatos'],
+        'id_contato' => $resultado['id_contato'],
         'id_servico' => $resultado['id_servico']
     );
+
     array_push($data, $contato) ;
     
     echo(json_encode($data));

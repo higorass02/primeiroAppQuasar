@@ -1,0 +1,73 @@
+<template>
+  <div>
+    <cadastro-form :formulario="formulario" :url="url" :voltar="voltar"/>
+  </div>
+</template>
+
+<style>
+</style>
+
+<script>
+import cadastroForm from 'src/components/Cadastro.vue'
+export default {
+  name: 'PageIndex',
+  components: {
+    cadastroForm
+  },
+  data () {
+    return {
+      url: 'http://localhost/dashboard/1quasar/BeckdoLaz/novo.php',
+      voltar: '/listarContatos',
+      formulario: [
+        {
+          model: '',
+          label: 'Id',
+          name: 'id',
+          disabled: true,
+          hidden: true,
+          mask: ''
+        },
+        {
+          model: '',
+          label: 'Nome',
+          name: 'nome',
+          required: true,
+          mask: ''
+        },
+        {
+          model: '',
+          label: 'CPF',
+          name: 'cpf',
+          required: true,
+          mask: '###.###.###-##'
+        },
+        {
+          type: 'date',
+          model: '',
+          label: 'Data de Nascimento',
+          name: 'dtnasc'
+        },
+        {
+          model: '',
+          label: 'Telefone',
+          name: 'tell',
+          mask: '(##) ####-####'
+        },
+        {
+          model: '',
+          label: 'Celular',
+          name: 'cell',
+          mask: '(##) #####-####'
+        },
+        {
+          model: '',
+          label: 'E-Mail',
+          name: 'email',
+          mask: ''
+        }
+      ]
+    }
+  },
+  methods: {}
+}
+</script>

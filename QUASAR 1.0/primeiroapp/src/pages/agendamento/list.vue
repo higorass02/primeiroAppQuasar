@@ -8,18 +8,15 @@
         />
       </div>
     </div>
-    <modal-agendar :showModal="showModal"/>
+    <modal-agendar :showModal="showModal" @fecharModal="fecharModal"/>
     <div class="q-pa-md">
-      <button
+      <q-btn
         style="margin-right: 10px;"
         class="bg-primary"
+        icon="add"
+        round
         @click="controleModal"
-      >
-        <q-icon
-          class="text-white"
-          name="add"
-        />
-      </button>
+      />
       <p style="color: #FFF;font-size: 20px;text-align: center;">Agendados</p>
       <q-table
         dense
@@ -67,7 +64,7 @@
 </style>
 
 <script>
-import modalAgendar from 'src/pages/modalAgendar'
+import modalAgendar from 'src/pages/agendamento/formulario-modal.vue'
 import axios from 'axios'
 export default {
   name: 'PageIndex',
@@ -76,7 +73,8 @@ export default {
   },
   data () {
     return {
-      date: '2019/05/06',
+      showModal: false,
+      date: '',
       formulario: [
         {
           model: '',
@@ -131,14 +129,23 @@ export default {
           value: ''
         }
       ],
-      formulario2: [],
-      showModal: false
+      formulario2: []
     }
   },
   methods: {
+    fecharModal (val) {
+      this.showModal = val
+    },
+    diaHoje () {
+      let today = new Date()
+      let dd = String(today.getDate()).padStart(2, '0')
+      let mm = String(today.getMonth() + 1).padStart(2, '0')
+      let yyyy = today.getFullYear()
+      today = yyyy + '/' + mm + '/' + dd
+      this.date = today
+    },
     controleModal () {
-      this.showModal = false
-      this.showModal = true
+      this.showModal = !this.auxModal
     },
     get () {
       this.formulario2 = []
@@ -178,8 +185,18 @@ export default {
       this.get()
     }
   },
+  computed: {
+    auxModal: {
+      get () {
+        return this.showModal
+      },
+      set () {
+        this.showModal = !!document.getElementById('idModal')
+      }
+    }
+  },
   beforeMount () {
-    this.get()
+    this.diaHoje()
   }
 }
 </script>
