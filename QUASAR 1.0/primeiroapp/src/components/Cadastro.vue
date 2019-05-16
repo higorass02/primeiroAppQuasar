@@ -72,7 +72,6 @@ export default {
       this.formulario.map(o => {
         data[o.name] = o.model
       })
-      // console.log(data)
       axios.post(this.url, data).then(function (response) {
         console.log(response.data)
       })
@@ -80,6 +79,18 @@ export default {
           console.log(error)
         })
     }
+  },
+  beforeMount () {
+    let today = new Date()
+    let dd = String(today.getDate()).padStart(2, '0')
+    let mm = String(today.getMonth() + 1).padStart(2, '0')
+    let yyyy = today.getFullYear()
+    today = yyyy + '/' + mm + '/' + dd
+    this.formulario.map(o => {
+      if (o.mask === 'date') {
+        o.model = today
+      }
+    })
   }
 }
 </script>

@@ -8,7 +8,11 @@
         />
       </div>
     </div>
-    <modal-agendar :showModal="showModal" @fecharModal="fecharModal"/>
+    <modal-agendar
+      :showModal="showModal"
+      @fecharModal="fecharModal"
+      :date="date"
+    />
     <div class="q-pa-md">
       <q-btn
         style="margin-right: 10px;"

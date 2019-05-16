@@ -26,7 +26,7 @@
 
     include('conection.php');
 
-    $sql = "SELECT * FROM `smb_agenda` WHERE DATE_FORMAT(data_agenda, '%Y-%m-%d') = '".$data."'";
+    $sql = "SELECT * FROM `smb_agenda` WHERE DATE_FORMAT(data_agenda, '%Y/%m/%d') = '".$data."'";
     
     $result = $conn->query($sql);
     

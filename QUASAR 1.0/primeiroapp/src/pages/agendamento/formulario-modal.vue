@@ -11,27 +11,10 @@
           v-model="item.model"
           :label="item.label"
           :disable="item.disabled"
-          v-show="!item.hidden && !item.rules"
+          v-show="!item.hidden"
           :mask="item.mask"
           :required="item.required"
         />
-        <q-input
-          style="width: 80%;"
-          color="white"
-          dark
-          v-show="item.rules"
-          filled
-          v-model="item.model"
-          mask="date"
-          :rules="['date']">
-          <template>
-            <q-icon name="event" class="cursor-pointer">
-              <q-popup-proxy>
-                <q-date v-model="item.model"/>
-              </q-popup-proxy>
-            </q-icon>
-          </template>
-        </q-input>
       </div>
     </div>
       <div class="row col-12" style="margin-top: 15%">
@@ -62,6 +45,10 @@ export default {
     showModal: {
       type: Boolean,
       default: false
+    },
+    date: {
+      type: String,
+      default: ''
     }
   },
   data () {
@@ -69,10 +56,10 @@ export default {
       auxModal: false,
       formulario: [
         {
-          rules: 'date',
           model: '',
           label: 'Data Agendamento',
-          name: 'data'
+          name: 'data',
+          mask: 'date'
         },
         {
           model: '',
@@ -96,14 +83,6 @@ export default {
     }
   },
   methods: {
-    diaHoje () {
-      let today = new Date()
-      let dd = String(today.getDate()).padStart(2, '0')
-      let mm = String(today.getMonth() + 1).padStart(2, '0')
-      let yyyy = today.getFullYear()
-      today = yyyy + '-' + mm + '-' + dd
-      return today
-    },
     post () {
       let url = 'http://localhost/dashboard/1quasar/BeckdoLaz/novo.php'
       let data = {}
@@ -122,6 +101,13 @@ export default {
   watch: {
     showModal (val) {
       this.controleModal = val
+    },
+    date (val) {
+      this.formulario.map(o => {
+        if (o.mask === 'date') {
+          o.model = val
+        }
+      })
     }
   },
   computed: {
@@ -136,7 +122,11 @@ export default {
     }
   },
   beforeMount () {
-    this.formulario[0].model = this.diaHoje()
+    this.formulario.map(o => {
+      if (o.mask === 'date') {
+        o.model = this.date
+      }
+    })
   }
 }
 </script>

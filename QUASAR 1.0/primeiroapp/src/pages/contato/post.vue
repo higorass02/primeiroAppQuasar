@@ -42,10 +42,10 @@ export default {
           mask: '###.###.###-##'
         },
         {
-          type: 'date',
           model: '',
           label: 'Data de Nascimento',
-          name: 'dtnasc'
+          name: 'dtnasc',
+          mask: 'date'
         },
         {
           model: '',

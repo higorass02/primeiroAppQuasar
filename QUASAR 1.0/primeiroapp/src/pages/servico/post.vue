@@ -46,7 +46,7 @@ export default {
           model: '',
           label: 'Data de Nascimento',
           name: 'dtnasc',
-          mask: '##/##/####'
+          mask: 'date'
         },
         {
           model: '',
