@@ -31,7 +31,7 @@
             <q-item
               clickable
               tag="a"
-              href="/#/"
+              href="/#/home"
             >
               <img src="assets/logoSalao.png" style="width: 80%; height: 80%"/>
             </q-item>
@@ -59,6 +59,14 @@
             </q-item-section>
             <q-item-section>
               <q-item-label>Agenda</q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-item clickable tag="a" @click="logout" class="absolute-bottom">
+            <q-item-section avatar>
+              <q-icon name="input" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Sair</q-item-label>
             </q-item-section>
           </q-item>
         </q-list>
@@ -90,8 +98,9 @@ export default {
   },
   methods: {
     openURL,
-    contatosclick () {
-      console.log('asd')
+    logout () {
+      localStorage.setItem('login', 'false')
+      this.$router.push('login')
     }
   }
 }

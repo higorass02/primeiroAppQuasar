@@ -1,5 +1,12 @@
 <template>
-  <q-page class="flex flex-center">
+  <!--Celular do Higor-->
+  <!-- min-height: 70ex -->
+  <!-- min-height: 66ch -->
+  <!-- min-height: 37em -->
+  <!-- min-height: 155vmin -->
+  <!-- min-height: 33rem -->
+  <!-- min-height: 144vw -->
+  <q-page class="flex flex-center" style="min-height: 144vw; max-height: 100vmax;">
     <div class="row full-width flex flex-center" style="margin-top: -40%" >
       <q-input
         style="width: 80%;"
